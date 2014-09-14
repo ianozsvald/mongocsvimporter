@@ -27,6 +27,8 @@ NOTE the first line of the CSV cannot (yet) be ignored, so it can't have a heade
 
 By default the character encoding is UTF8, for the example above CP1252 has to be used (a few entires in the files use Windows smart quotes!).
 
+NOTE that the default datetime parser uses the defaults https://labix.org/python-dateutil#head-c0e81a473b647dfa787dc11e8c69557ec2c3ecd2 which mean that ambiguous datetimes (e.g. MM-DD or DD-MM) are interpreted in certain ways. You should edit the code with your own functions, possibly using a `partial`, to set spcific datetime parsing rules as required.
+
 Testing
 =======
 
@@ -34,3 +36,8 @@ To run the unit-tests
 
     $ nosetests mongoimporttypedcsv.py
 
+Future
+======
+
+    * Possibly the `smartcsv` library https://github.com/santiagobasulto/smartcsv could be used to provide stronger typing and validation for each column.
+    * Maybe arbitrary Python strings could be passed in in place of the type codes?
