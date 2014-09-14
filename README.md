@@ -25,6 +25,8 @@ The example above is based on UK Land Registry open data http://data.gov.uk/data
 
 NOTE the first line of the CSV cannot (yet) be ignored, so it can't have a header.
 
+By default the character encoding is UTF8, for the example above CP1252 has to be used (a few entires in the files use Windows smart quotes!).
+
 Testing
 =======
 
